@@ -76,6 +76,34 @@ Subscribe to tag changes
    :language: python
    :linenos:
 
+
+Product API
+-------
+
+Overview
+~~~~~~~~
+
+The :class:`.ProductClient` class is the primary entry point of the Product API.
+
+When constructing a :class:`.ProductClient`, you can pass an
+:class:`.HttpConfiguration` (like one retrieved from the
+:class:`.HttpConfigurationManager`), or let :class:`.ProductClient` use the
+default connection. The default connection depends on your environment.
+
+With a :class:`.ProductClient` object, you can:
+
+* Create, update, query, and delete Products
+
+Examples
+~~~~~~~~
+
+Create, query, update, and delete some products
+
+.. literalinclude:: ../examples/product/products.py
+   :language: python
+   :linenos:
+
+
 DataFrame API
 -------
 
@@ -118,5 +146,69 @@ Query and read data from a table
 Export data from a table
 
 .. literalinclude:: ../examples/dataframe/export_data.py
+   :language: python
+   :linenos:
+
+Spec API
+-------
+
+Overview
+~~~~~~~~
+
+
+The :class:`.SpecClient` class is the primary entry point of the Specification Compliance API.
+
+When constructing a :class:`.SpecClient`, you can pass an
+:class:`.HttpConfiguration` (like one retrieved from the
+:class:`.HttpConfigurationManager`), or let :class:`.SpecClient` use the
+default connection. The default connection depends on your environment.
+
+With a :class:`.SpecClient` object, you can: 
+
+* Create and delete specifications under a product.
+
+* Modify any fields of an existing specification
+
+* Query for specifications on any fields using DynamicLinq syntax.
+
+Examples
+~~~~~~~~
+
+Create and Query Specifications
+
+.. literalinclude:: ../examples/spec/query_specs.py
+   :language: python
+   :linenos:
+
+Update and Delete Specifications
+
+.. literalinclude:: ../examples/spec/update_and_delete_specs.py
+   :language: python
+   :linenos:
+
+
+File API
+-------
+
+Overview
+~~~~~~~~
+
+The :class:`.FileClient` class is the primary entry point of the File API.
+
+When constructing a :class:`.FileClient`, you can pass an
+:class:`.HttpConfiguration` (like one retrieved from the
+:class:`.HttpConfigurationManager`), or let :class:`.FileClient` use the
+default connection. The default connection depends on your environment.
+
+With a :class:`.FileClient` object, you can:
+
+* Get the list of files, download and delete files
+
+Examples
+~~~~~~~~
+
+Get the metadata of a File using its Id and download it.
+
+.. literalinclude:: ../examples/file/download_file.py
    :language: python
    :linenos:

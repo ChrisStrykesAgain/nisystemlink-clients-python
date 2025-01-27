@@ -3,13 +3,13 @@
 from typing import Optional
 
 from nisystemlink.clients import core
-from nisystemlink.clients.core._uplink._base_client import BaseClient
+from nisystemlink.clients.core._uplink._core_client import CoreClient
 from nisystemlink.clients.core._uplink._methods import get
 
 from . import models
 
 
-class AuthClient(BaseClient):
+class AuthClient(CoreClient):
     def __init__(self, configuration: Optional[core.HttpConfiguration] = None):
         """Initialize an instance.
 

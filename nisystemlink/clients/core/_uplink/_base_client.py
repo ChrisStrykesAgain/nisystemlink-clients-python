@@ -1,6 +1,6 @@
 # mypy: disable-error-code = misc
 
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Union
 
 from nisystemlink.clients import core
 
@@ -26,7 +26,7 @@ class BaseClient(CoreClient):
 
     def get_workspaces(
         self, desired_workspace_names: Optional[List[str]] = None
-    ) -> Dict[str, str]:
+    ) -> Union[Dict[str, str], None]:
         """Gets a list of workspaces.
 
         Args:
@@ -37,7 +37,7 @@ class BaseClient(CoreClient):
         """
         all_workspaces = self.auth_client.get_auth_info().workspaces
         if not all_workspaces:
-            return {}
+            return None
         if desired_workspace_names:
             return {
                 workspace.name: workspace.id

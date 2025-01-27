@@ -16,6 +16,7 @@ API Reference
    api_reference/spec
    api_reference/file
    api_reference/notebook
+   api_reference/auth
 
 Indices and tables
 ------------------
